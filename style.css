@@ -1,0 +1,128 @@
+/*ACCEUIL*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(26, 1fr);
+    grid-template-rows: repeat(26, 1fr);
+    background-image: url(images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    
+}
+
+#header {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 27;
+    z-index: 1;
+    background-color: white;
+    grid-column: 1 / span 26;
+    grid-row: 1 / span 2;
+    display: flex;
+    align-items:center;
+    justify-content:left;
+    border-bottom: 2px solid #ddd;
+}
+
+a {
+    text-decoration: none;
+    }
+.cart {
+    
+}
+#text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row-start: 3;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 27;
+    background-size: cover;
+    text-align: center;
+}
+
+#text-container {
+    color: white;
+}
+
+#content-left {
+    grid-row-start: 8;
+    grid-row-end: 19;
+    grid-column-start: 5;
+    grid-column-end: 11;
+    background-size: cover;
+    display: flex;
+    gap: 20px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.search input {
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    gap: 0;
+}
+
+
+.search button {
+    padding: 10px;
+    background-color: #2f855a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: #276749;
+}
+
+#content-right {
+    grid-row-start: 8;
+    grid-row-end: 19;
+    grid-column-start: 17;
+    grid-column-end: 23;
+    background-size: cover;
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+ }
+
+ #content-right img {
+    width: 80px;
+    height: 80px;
+ }
+
+ #horizontal-line {
+    width: 80%;
+    height: 2px;
+    background-color: black;
+    margin: 20px;
+}
+
+
