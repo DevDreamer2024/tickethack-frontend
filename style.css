@@ -14,8 +14,6 @@ body {
     grid-template-rows: repeat(26, 1fr);
     background-image: url(images/background.jpg);
     background-size: cover;
-    background-position: center;
-    
 }
 
 #header {
@@ -33,23 +31,30 @@ body {
     border-bottom: 2px solid #ddd;
 }
 
+h1 {
+    margin-left: 2vw;
+    font-size: 2.5em;
+    color: #147f56;
+}
+
 .cart {
     margin-left: auto;
     margin-right: 2vw;
 }
-
+.cart a {
+    color: black;
+}
 .bookings {
     margin-right: 2vw;
 }
-
-
+.bookings a {
+    color: black;
+}
 
 a {
     text-decoration: none;
     }
-.cart {
-    
-}
+
 #text {
     display: flex;
     justify-content: center;
@@ -66,6 +71,16 @@ a {
     color: white;
 }
 
+#text-container h2 {
+    font-size: 2vw;
+    margin-bottom: 1vh;
+}
+
+#text-container p {
+    font-size: 1.8vw;
+    margin-bottom: 1vh;
+}
+
 #content-left {
     grid-row-start: 8;
     grid-row-end: 19;
@@ -79,16 +94,21 @@ a {
     background-color: white;
     border-radius: 8px;
     padding: 20px;
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 15vw;
+    max-height: 25vh;
 }
 
 .search {
     display: flex;
     flex-direction: column; 
-    height: 80%;
-    width: 80%;
+    height: 100%;
+    width: 100%;
 }
 
 .search input {
+    background-color: hsla(150, 1%, 53%, 0.104);
     align-items: center;
     padding: 10px;
     border: 1px solid #ccc;
@@ -98,14 +118,27 @@ a {
     width: auto;
 }
 
-.search input > #departure {
-    gap : 10px;
+#departure {
+    margin-top: 1vh;
+    margin-bottom: 0vh;
 }
 
+#arrival {
+    margin-bottom: 2vh;
+}
+
+#date {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
 .search button {
     padding: 10px;
     background-color: #2f855a;
     color: white;
+    margin-left: 1vh;
+    margin-right :1vh;
+    margin-top: auto;
+    margin-bottom: 1vh;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -130,6 +163,10 @@ a {
     padding: 20px;
     background-color: white;
     border-radius: 8px;
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 15vw;
+    max-height: 25vh;
  }
 
  #content-right img {
