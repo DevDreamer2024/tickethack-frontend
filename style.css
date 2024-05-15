@@ -42,14 +42,10 @@ body {
     margin-right: 2vw;
 }
 
-
-
 a {
     text-decoration: none;
     }
-.cart {
-    
-}
+
 #text {
     display: flex;
     justify-content: center;
@@ -144,4 +140,53 @@ a {
     margin: 20px;
 }
 
+/*CART*/
 
+#thecontainer {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(26, 1fr);
+    grid-template-rows: repeat(26, 1fr);
+    background-color: rgb(237, 233, 233);
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+#theheader {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 27;
+    z-index: 1;
+    background-color: white;
+    grid-column: 1 / span 26;
+    grid-row: 1 / span 2;
+    display: flex;
+    align-items:center;
+    justify-content:left;
+    border-bottom: 2px solid #ddd;
+}
+
+.thecart {
+    margin-left: auto;
+    margin-right: 2vw;
+}
+
+.thebookings {
+    margin-right: 2vw;
+}
+
+#contain {
+    grid-row-start: 10;
+    grid-row-end: 18;
+    grid-column-start: 5;
+    grid-column-end: 23;
+    background-color: white;
+}
+ .text {
+    text-align: center;
+    padding: 50px;
+ }
