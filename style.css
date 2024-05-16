@@ -1,9 +1,13 @@
-/*ACCEUIL*/
+
+/*ACCUEIL*/
 
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+}
+/* police pour l'ensemble des elements*/
+* {
+    font-family: "Roboto", "Times New Roman", sans-serif;
 }
 
 #container {
@@ -29,6 +33,10 @@ body {
     align-items:center;
     justify-content:left;
     border-bottom: 2px solid #ddd;
+    min-height: 80px;
+    min-width: 100vw;
+    max-width : 100vw;
+    max-height: 5vh;
 }
 
 h1 {
@@ -43,16 +51,19 @@ h1 {
 }
 .cart a {
     color: black;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1rem;
 }
 .bookings {
     margin-right: 2vw;
 }
-<<<<<<< HEAD
-=======
 .bookings a {
     color: black;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1rem;
 }
->>>>>>> be8ac4fa4268bdfeba7409b85c47c5efdc283f0d
 
 a {
     text-decoration: none;
@@ -99,7 +110,7 @@ a {
     padding: 20px;
     min-height: 200px;
     min-width: 200px;
-    max-width: 15vw;
+    max-width: 18vw;
     max-height: 25vh;
 }
 
@@ -158,7 +169,8 @@ a {
     grid-column-end: 23;
     background-size: cover;
     border-radius: 8px;
-    background-color: white;
+     overflow: scroll;
+     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -168,11 +180,12 @@ a {
     border-radius: 8px;
     min-height: 200px;
     min-width: 200px;
-    max-width: 15vw;
+    max-width: 18vw;
     max-height: 25vh;
  }
 
  #content-right img {
+   
     width: 80px;
     height: 80px;
  }
@@ -184,9 +197,29 @@ a {
     margin: 20px;
 }
 
+/*affichage des trajets*/
+
+.trajets {
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: hsla(150, 1%, 53%, 0.104);
+    border-radius: 8px;
+    margin : 10px;
+    font-weight: 500;
+    width: 100%;
+
+}
+
+.btn-reservation {
+    background-color: #276749;
+    color: white;
+    cursor: pointer;
+}
 /*CART*/
 
-#thecontainer {
+#cart-container {
     height: 100vh;
     width: 100vw;
     display: grid;
@@ -198,39 +231,37 @@ a {
     
 }
 
-
-#theheader {
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 27;
-    z-index: 1;
-    background-color: white;
-    grid-column: 1 / span 26;
-    grid-row: 1 / span 2;
-    display: flex;
-    align-items:center;
-    justify-content:left;
-    border-bottom: 2px solid #ddd;
-}
-
-.thecart {
-    margin-left: auto;
-    margin-right: 2vw;
-}
-
-.thebookings {
-    margin-right: 2vw;
-}
-
 #contain {
     grid-row-start: 10;
     grid-row-end: 18;
     grid-column-start: 5;
     grid-column-end: 23;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 65vw;
+    max-height: 25vh;
 }
  .text {
     text-align: center;
-    padding: 50px;
+    padding: 10px;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1rem;
+    color: #147f56";
  }
+ .undertext {
+    text-align: center;
+    padding: 10px;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1rem;
+    color: #147f56";
+}
