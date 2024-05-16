@@ -1,4 +1,4 @@
-/*ACCEUIL*/
+/*ACCUEIL*/
 
 body {
     margin: 0;
@@ -47,12 +47,9 @@ h1 {
 .bookings {
     margin-right: 2vw;
 }
-<<<<<<< HEAD
-=======
 .bookings a {
     color: black;
 }
->>>>>>> be8ac4fa4268bdfeba7409b85c47c5efdc283f0d
 
 a {
     text-decoration: none;
