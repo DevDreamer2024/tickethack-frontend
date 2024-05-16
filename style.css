@@ -200,13 +200,12 @@ a {
 /*affichage des trajets*/
 
 .trajets {
-    background-size: cover;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: hsla(150, 1%, 53%, 0.104);
     border-radius: 8px;
-    margin : 10px;
+    margin : 5px;
     font-weight: 500;
     width: 100%;
 
