@@ -169,7 +169,8 @@ a {
     grid-column-end: 23;
     background-size: cover;
     border-radius: 8px;
-    background-color: white;
+     overflow: scroll;
+     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -184,7 +185,7 @@ a {
  }
 
  #content-right img {
-    
+   
     width: 80px;
     height: 80px;
  }
@@ -196,6 +197,26 @@ a {
     margin: 20px;
 }
 
+/*affichage des trajets*/
+
+.trajets {
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: hsla(150, 1%, 53%, 0.104);
+    border-radius: 8px;
+    margin : 10px;
+    font-weight: 500;
+    width: 100%;
+
+}
+
+.btn-reservation {
+    background-color: #276749;
+    color: white;
+    cursor: pointer;
+}
 /*CART*/
 
 #cart-container {
