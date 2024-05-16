@@ -4,7 +4,10 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+}
+/* police pour l'ensemble des elements*/
+* {
+    font-family: "Roboto", "Times New Roman", sans-serif;
 }
 
 #container {
@@ -48,7 +51,6 @@ h1 {
 }
 .cart a {
     color: black;
-    font-family: "Roboto", "Times New Roman" , sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 1rem;
@@ -58,7 +60,6 @@ h1 {
 }
 .bookings a {
     color: black;
-    font-family: "Roboto", "Times New Roman" , sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 1rem;
@@ -109,7 +110,7 @@ a {
     padding: 20px;
     min-height: 200px;
     min-width: 200px;
-    max-width: 15vw;
+    max-width: 18vw;
     max-height: 25vh;
 }
 
@@ -178,11 +179,12 @@ a {
     border-radius: 8px;
     min-height: 200px;
     min-width: 200px;
-    max-width: 15vw;
+    max-width: 18vw;
     max-height: 25vh;
  }
 
  #content-right img {
+    
     width: 80px;
     height: 80px;
  }
@@ -229,7 +231,6 @@ a {
  .text {
     text-align: center;
     padding: 10px;
-    font-family: "Roboto", "Times New Roman" , sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 1rem;
@@ -238,7 +239,6 @@ a {
  .undertext {
     text-align: center;
     padding: 10px;
-    font-family: "Roboto", "Times New Roman" , sans-serif;
     font-weight: 800;
     font-style: normal;
     font-size: 1rem;
