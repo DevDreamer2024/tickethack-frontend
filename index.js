@@ -53,3 +53,26 @@ document.querySelector('#searchTicket').addEventListener('click', () => {
         })
         .catch(error => console.error(error));
 });
+
+//function reservation 
+
+document.querySelector('.btn-reservation').addEventListener('click', (event) => {
+    const trajetId = event.target.id;
+    fetch("http://localhost:3000/trajets/ajouteraupanier", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ trajetId })
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            if (data.result === true) {
+                alert('Trip added to cart');
+            } else {
+                alert('Error');
+            }
+        })
+        .catch(error => console.error(error));
+    });
