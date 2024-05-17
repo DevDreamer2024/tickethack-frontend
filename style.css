@@ -168,9 +168,10 @@ a {
     grid-column-start: 17;
     grid-column-end: 23;
     background-size: cover;
-    border-radius: 8px;
-    overflow: auto;
-    background-color: white;
+    /* overflow auto rajoute un scroll non necessaire sur l'axe x*/
+    overflow-x: hidden;
+    /*overflow axe y auto ajoutera le scroll que lorsque les trajets seront present dans la div*/
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -211,10 +212,25 @@ a {
 
 }
 
+.trajets-reservation {
+    display: flex;
+    align-items: center;
+}
+
 .btn-reservation {
-    background-color: #276749;
+    display: flex;
+    align-items: center;
+    background-color: #2f855a;
     color: white;
     cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+
+.btn-reservation:hover {
+    background-color: #276749;
 }
 /*CART*/
 

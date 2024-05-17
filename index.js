@@ -43,7 +43,7 @@ document.querySelector('#searchTicket').addEventListener('click', () => {
                             <p>${trajets.departure} > ${trajets.arrival} ${formattedTime} ${trajets.price}€</p>
                         </div>
                         <div class="trajets-reservation">
-                            <button class="btn-reservation" id="${trajets.id}" >Book</button>
+                            <button class="btn-reservation" id="${trajets._id}" >Book</button>
                         </div>
                     </div>
                     `
@@ -51,29 +51,31 @@ document.querySelector('#searchTicket').addEventListener('click', () => {
                 document.querySelector('#content-right').innerHTML = content;
 
                 //et une fois que btn reservation est crée, on lui ajoute un event listener pour ajouter le trajet au panier et rediriger sur cart.html
-                document.querySelector('.btn-reservation').addEventListener('click', (event) => {
-                    const trajetId = event.target.id;
-                    fetch("http://localhost:3000/trajets/ajouteraupanier", {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ trajetId })
-                    })
-                        .then(response => response.json())
-                        .then(data => {
-                            console.log(data);
-                            if (data.result === true) {
-                                alert('Trip added to cart');
-                            } else {
-                                alert('Error');
-                            }
+                document.querySelectorAll('.btn-reservation').forEach(button => {
+                    button.addEventListener('click', (event) => {
+                        const id = event.target.id;
+                        fetch(`http://localhost:3000/trajets/ajouteraupanier?${id}`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id : id})
                         })
-                        .catch(error => console.error(error));
-                
-                        window.location.href = "cart.html"
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log(data);
+                                if (data.result === true) {
+                                    alert('Trip added to cart');
+                                    window.location.href = "cart.html"
+                                } else {
+                                    alert('Error');
+                                }
+                            })
+                            .catch(error => console.error(error));
+                        });
                     });
-            }
-        })
-        .catch(error => console.error(error));
-});
+                }
+            })
+            .catch(error => console.error(error));
+    });
+
