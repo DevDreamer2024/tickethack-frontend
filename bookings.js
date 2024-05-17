@@ -7,10 +7,26 @@ fetch('http://localhost:3000/trajets/trajetbooked')
         if (data.trajets.length > 0) {
         console.log(data);
         let content = '';
+            // Récupération de l'heure actuelle
+        const now = new Date();
+        const currentHour = now.getHours();
+        const currentMinutes = now.getMinutes();
+        
         data.trajets.forEach(trajet => {
+            
             const hour = new Date(trajet.date).getHours();
             const minutes = new Date(trajet.date).getMinutes();
             const formattedTime = `${hour}:${minutes < 10 ? '0' + minutes : minutes}`;
+            
+            let calculatedMinute = (hour * 60 + minutes) - (currentHour * 60 + currentMinutes);
+            if (calculatedMinute < 0) {
+                calculatedMinute += 24 *60;
+            }
+            const diffHours = Math.floor(calculatedMinute / 60);
+
+            const timeBeforeDeparture = `${diffHours}h`;
+            
+            
             content += `
             <div class="trajets">
             <div class="trajets-info">
@@ -19,7 +35,7 @@ fetch('http://localhost:3000/trajets/trajetbooked')
             <div class="trajets-price"><p> ${trajet.price}€</p></div>
             </div>
             <div class="trajets-departure-time">
-                <p>Departure time : </p> 
+                <p>Departure time : ${timeBeforeDeparture}</p> 
             </div>
         </div>
         `
