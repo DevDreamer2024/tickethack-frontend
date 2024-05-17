@@ -7,7 +7,6 @@ fetch('http://localhost:3000/trajets/trajetbooked')
         if (data.trajets.length > 0) {
         console.log(data);
         let content = '';
-        let total = 0;
         data.trajets.forEach(trajet => {
             const hour = new Date(trajet.date).getHours();
             const minutes = new Date(trajet.date).getMinutes();
@@ -25,3 +24,17 @@ document.querySelector('#contain').innerHTML = content;
 })
 .catch(error => console.error(error));
 });
+
+// Reset button pour les test
+document.querySelector('#reset').addEventListener('click', () => {
+fetch('http://localhost:3000/trajets/reset')
+    .then(response => response.json())
+    .then(data => {
+        if (data.result === true) {
+            alert('Database reset');
+            window.location.reload();
+        } else {
+            alert('Error');
+        }
+    })
+})
