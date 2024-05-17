@@ -6,6 +6,7 @@ console.log('Welcome to index.js')
 window.addEventListener('load', () => {
     let currentDate = new Date();
     let dateElement = document.getElementById('date');
+    //convertis la date en string et la split pour avoir uniquement la date (sans l'heure)
     let formattedDate = currentDate.toISOString().split('T')[0];
     dateElement.value = formattedDate
     dateElement.min = formattedDate
@@ -19,7 +20,9 @@ window.addEventListener('load', () => {
 
 document.querySelector('#searchTicket').addEventListener('click', () => {
     let departure = document.querySelector('#departure').value;
+    departure = departure.charAt(0).toUpperCase() + departure.slice(1);
     let arrival = document.querySelector('#arrival').value;
+    arrival = arrival.charAt(0).toUpperCase() + arrival.slice(1);
     let date = document.querySelector('#date').value;
 
     fetch(`http://localhost:3000/trajets/recherche?departure=${departure}&arrival=${arrival}&date=${date}`)
