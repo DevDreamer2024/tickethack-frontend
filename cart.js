@@ -16,7 +16,9 @@ window.addEventListener('load', () => {
                 content += `
                 <div class="trajets">
                     <div class="trajets-info">
-                        <p>${trajet.departure} > ${trajet.arrival} ${formattedTime} ${trajet.price}€</p>
+                    <div class="trajets-departure-arrival"><p>${trajet.departure} > ${trajet.arrival} </div>
+                    <div class="trajets-time"><p> ${formattedTime}</p></div>
+                    <div class="trajets-price"><p> ${trajet.price}€</p></div>
                     </div>
                     <div class="trajets-reservation">
                         <button class="btn-delete" id="${trajet._id}" >X</button>
@@ -25,9 +27,9 @@ window.addEventListener('load', () => {
                 `
                 total += trajet.price;
             });
-            content += `<div class="total">Total: ${total}€</div>
-            <div class="btn-reservation"> 
-            <button class ="btn-book">Purchase</button>`;
+            content += `<div class="total"><p>Total: ${total}€</p> 
+            <button class ="btn-book">Purchase</button></div>
+            <div id="mycart">My cart</div>`;
         
             document.querySelector('#contain').innerHTML = content;
 //si le total est a 0 (si on a supprime tout les trajets , reinitialise la div contain)

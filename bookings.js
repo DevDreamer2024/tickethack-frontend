@@ -13,13 +13,24 @@ fetch('http://localhost:3000/trajets/trajetbooked')
             const formattedTime = `${hour}:${minutes < 10 ? '0' + minutes : minutes}`;
             content += `
             <div class="trajets">
-                <div class="trajets-info">
-                    <p>${trajet.departure} > ${trajet.arrival} ${formattedTime} ${trajet.price}€</p>
-                </div>
+            <div class="trajets-info">
+            <div class="trajets-departure-arrival"><p>${trajet.departure} > ${trajet.arrival} </div>
+            <div class="trajets-time"><p> ${formattedTime}</p></div>
+            <div class="trajets-price"><p> ${trajet.price}€</p></div>
             </div>
-            `
+            <div class="trajets-departure-time">
+                <p>Departure time : </p> 
+            </div>
+        </div>
+        `
 });
 document.querySelector('#contain').innerHTML = content;
+document.querySelector('#contain').innerHTML += `
+<div id="horizontal-line-smaller"></div>
+<div id="thankingmessage">
+<p> Enjoy your travel with Tickethack!</p>
+</div>
+<div id="mybooking">My bookings</div>`
 }
 })
 .catch(error => console.error(error));
