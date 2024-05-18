@@ -25,7 +25,7 @@ document.querySelector('#searchTicket').addEventListener('click', () => {
     arrival = arrival.charAt(0).toUpperCase() + arrival.slice(1);
     let date = document.querySelector('#date').value;
 
-    fetch(`https://tickethack-backend-silk.vercel.app/recherche?departure=${departure}&arrival=${arrival}&date=${date}`)
+    fetch(`https://tickethack-backend-silk.vercel.app/trajets/recherche?departure=${departure}&arrival=${arrival}&date=${date}`)
         .then(response => response.json())
         .then(data => {
             console.log(data);
