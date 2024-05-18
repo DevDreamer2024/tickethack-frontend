@@ -24,7 +24,7 @@ fetch('http://localhost:3000/trajets/trajetbooked')
             }
             const diffHours = Math.floor(calculatedMinute / 60);
 
-            const timeBeforeDeparture = `${diffHours}h`;
+            const timeBeforeDeparture = `${diffHours}h ${calculatedMinute % 60}min`;
             
             
             content += `
