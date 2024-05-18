@@ -6,6 +6,7 @@ console.log('Welcome to index.js')
 window.addEventListener('load', () => {
     let currentDate = new Date();
     let dateElement = document.getElementById('date');
+    //convertis la date en string et la split pour avoir uniquement la date (sans l'heure)
     let formattedDate = currentDate.toISOString().split('T')[0];
     dateElement.value = formattedDate
     dateElement.min = formattedDate
@@ -19,7 +20,9 @@ window.addEventListener('load', () => {
 
 document.querySelector('#searchTicket').addEventListener('click', () => {
     let departure = document.querySelector('#departure').value;
+    departure = departure.charAt(0).toUpperCase() + departure.slice(1);
     let arrival = document.querySelector('#arrival').value;
+    arrival = arrival.charAt(0).toUpperCase() + arrival.slice(1);
     let date = document.querySelector('#date').value;
 
     fetch(`http://localhost:3000/trajets/recherche?departure=${departure}&arrival=${arrival}&date=${date}`)
@@ -43,13 +46,39 @@ document.querySelector('#searchTicket').addEventListener('click', () => {
                             <p>${trajets.departure} > ${trajets.arrival} ${formattedTime} ${trajets.price}€</p>
                         </div>
                         <div class="trajets-reservation">
-                            <button class="btn-reservation" id="${trajets.id}">Book</button>
+                            <button class="btn-reservation" id="${trajets._id}" >Book</button>
                         </div>
                     </div>
                     `
                 });
                 document.querySelector('#content-right').innerHTML = content;
-            }
-        })
-        .catch(error => console.error(error));
-});
+
+                //et une fois que btn reservation est crée, on lui ajoute un event listener pour ajouter le trajet au panier et rediriger sur cart.html
+                document.querySelectorAll('.btn-reservation').forEach(button => {
+                    button.addEventListener('click', (event) => {
+                        const id = event.target.id;
+                        fetch(`http://localhost:3000/trajets/ajouteraupanier?${id}`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id : id})
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log(data);
+                                if (data.result === true) {
+                                    alert('Trip added to cart');
+                                    window.location.href = "cart.html"
+                                } else {
+                                    alert('Error');
+                                }
+                            })
+                            .catch(error => console.error(error));
+                        });
+                    });
+                }
+            })
+            .catch(error => console.error(error));
+    });
+
