@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
     dateElement.value = formattedDate
     dateElement.min = formattedDate
     //test a supprimer quand on aura fini
-    fetch('http://localhost:3000/trajets/test')
+    fetch('https://tickethack-backend-silk.vercel.app/trajets/test')
         .then(response => response.json())
         .then(data => console.log(data))
     //fin du test
@@ -25,7 +25,7 @@ document.querySelector('#searchTicket').addEventListener('click', () => {
     arrival = arrival.charAt(0).toUpperCase() + arrival.slice(1);
     let date = document.querySelector('#date').value;
 
-    fetch(`http://localhost:3000/trajets/recherche?departure=${departure}&arrival=${arrival}&date=${date}`)
+    fetch(`https://tickethack-backend-silk.vercel.app/recherche?departure=${departure}&arrival=${arrival}&date=${date}`)
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -57,7 +57,7 @@ document.querySelector('#searchTicket').addEventListener('click', () => {
                 document.querySelectorAll('.btn-reservation').forEach(button => {
                     button.addEventListener('click', (event) => {
                         const id = event.target.id;
-                        fetch(`http://localhost:3000/trajets/ajouteraupanier?${id}`, {
+                        fetch(`https://tickethack-backend-silk.vercel.app/trajets/ajouteraupanier?${id}`, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'

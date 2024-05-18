@@ -1,7 +1,7 @@
 console.log("welcome to booking.js");
 
 window.addEventListener('load', () => {
-fetch('http://localhost:3000/trajets/trajetbooked')
+fetch('https://tickethack-backend-silk.vercel.app/trajets/trajetbooked')
     .then(response => response.json())
     .then(data => {
         if (data.trajets.length > 0) {
@@ -54,7 +54,7 @@ document.querySelector('#contain').innerHTML += `
 
 // Reset button pour les test
 document.querySelector('#reset').addEventListener('click', () => {
-fetch('http://localhost:3000/trajets/reset')
+fetch('https://tickethack-backend-silk.vercel.app/trajets/reset')
     .then(response => response.json())
     .then(data => {
         if (data.result === true) {

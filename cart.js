@@ -2,7 +2,7 @@ console.log("welcome to cart.js");
 //au chargement de la page on regarde si il y a des trajets dans le panier
 
 window.addEventListener('load', () => {
-    fetch('http://localhost:3000/trajets/contenudupanier')
+    fetch('https://tickethack-backend-silk.vercel.app/trajets/contenudupanier')
         .then(response => response.json())
         .then(data => {
             if (data.trajets.length > 0) {
@@ -46,7 +46,7 @@ window.addEventListener('load', () => {
             document.querySelectorAll('.btn-delete').forEach(button => {
                 button.addEventListener('click', (event) => {
                     const id = event.target.id;
-                    fetch(`http://localhost:3000/trajets/enleverdupanier?${id}`, {
+                    fetch(`https://tickethack-backend-silk.vercel.app/trajets/enleverdupanier?${id}`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -68,7 +68,7 @@ window.addEventListener('load', () => {
          })
          //bouton pour valider la commande faire en sorte que cela modifie tout les elements avec reservationsstatus cart
          document.querySelector('.btn-book').addEventListener('click', () => {
-            fetch(`http://localhost:3000/trajets/validerlacommande`) 
+            fetch(`https://tickethack-backend-silk.vercel.app/trajets/validerlacommande`) 
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
